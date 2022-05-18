@@ -1,9 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import MyComponent from "./MyComponent";
-import Counter from "./Counter";
-import Say from "./Say";
-import Three from "./Three";
+import Three from "./section3/Three";
 
 function App() {
   return (

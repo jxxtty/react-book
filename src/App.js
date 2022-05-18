@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Three from "./section3/Three";
+import Three from "./section03/Three";
 
 function App() {
   return (

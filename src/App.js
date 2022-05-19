@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import {Component} from "react";
 import Three from "./section03/Three";
 import Four from "./section04/Four";
 import Five from "./section05/Five";
-import {Component} from "react";
+import Six from "./section06/Six";
 
 class App extends Component {
     render() {
@@ -19,6 +20,10 @@ class App extends Component {
                 <hr/>
                 <h2>[5장] ref: DOM에 이름 달기</h2>
                 <Five />
+
+                <hr/>
+                <h2>[6장] 컴포넌트 반복</h2>
+                <Six />
             </>
         );
     }

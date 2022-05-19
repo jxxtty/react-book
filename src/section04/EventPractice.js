@@ -60,7 +60,7 @@ class EventPractice extends Component {
     render() {
         return (
             <div>
-                <h1>이벤트 연습 (class component)</h1>
+                <h3>이벤트 연습 (class component)</h3>
                 <input type={"text"} name={this.state.message} placeholder={"아무거나 입력해 보세용"} onChange={
                    event => {
                        //console.log(event.target.value);

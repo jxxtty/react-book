@@ -40,7 +40,7 @@ const EventPractice3 = () => {
 
     return (
         <div>
-            <h1>이벤트 연습 (function component)</h1>
+            <h3>이벤트 연습 (function component)</h3>
             <input type={"text"} name={"username"} placeholder={"사용자명"} value={username} onChange={onChange}/>
             <input type={"text"} name={"message"} placeholder={"아무거나 입력해보세용"} value={message} onChange={onChange} onKeyPress={onKeyPress}/>
             <button onClick={onClick}>확인</button>

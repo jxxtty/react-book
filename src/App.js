@@ -6,6 +6,7 @@ import Four from "./section04/Four";
 import Five from "./section05/Five";
 import Six from "./section06/Six";
 import Seven from "./section07/Seven";
+import Eight from "./section08/Eight";
 
 class App extends Component {
     render() {
@@ -33,6 +34,11 @@ class App extends Component {
                 <hr/>
                 <h2>[7장] 컴포넌트의 라이프사이클 메서드</h2>
                 <Seven />
+                <br/>
+
+                <hr/>
+                <h2>[8장] Hooks</h2>
+                <Eight/>
             </>
         );
     }

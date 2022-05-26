@@ -7,6 +7,7 @@ import Five from "./section05/Five";
 import Six from "./section06/Six";
 import Seven from "./section07/Seven";
 import Eight from "./section08/Eight";
+import Twelve from "./section12/Twelve";
 
 class App extends Component {
     render() {
@@ -39,6 +40,11 @@ class App extends Component {
                 <hr/>
                 <h2>[8장] Hooks</h2>
                 <Eight/>
+
+                <hr/>
+                <h2>[12장] immer를 사용하여 더 쉽게 불변성 유지하기</h2>
+                <Twelve/>
+
             </>
         );
     }

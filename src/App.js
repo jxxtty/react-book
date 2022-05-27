@@ -17,6 +17,9 @@ import Articles from "./section13/pages/Articles";
 import Article from "./section13/pages/Article";
 import Layout from "./section13/Layout";
 import Articles2 from "./section13/pages/Articles2";
+import NotFound from "./section13/pages/NotFound";
+import Login from "./section13/pages/Login";
+import MyPage from "./section13/pages/MyPage";
 
 // class App extends Component {
 //     render() {
@@ -78,6 +81,13 @@ const App = () => {
                         <Route path={":id"} element={<Article />} />
                 </Route>
                 {/*<Route path={"/articles/:id"} element={<Article />}></Route>*/}
+
+                {/* 경로에 직접 "/mypage"를 입력해서 확인해볼것! -> 로그인페이지로 이동된다. */}
+                <Route path={"/login"} element={<Login />} />
+                <Route path={"/mypage"} element={<MyPage />} />
+
+
+                <Route path={"*"} element={<NotFound />} /> {/* "*"는 wildcard, 일치하는 라우트가 없다면 NotFound페이지가 보여지게된다. */}
             </Routes>
         )
 }

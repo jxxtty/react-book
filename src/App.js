@@ -16,6 +16,7 @@ import About2 from "./section13/pages/About2";
 import Articles from "./section13/pages/Articles";
 import Article from "./section13/pages/Article";
 import Layout from "./section13/Layout";
+import Articles2 from "./section13/pages/Articles2";
 
 // class App extends Component {
 //     render() {
@@ -63,13 +64,17 @@ const App = () => {
             <Routes>
                 {/* <Route path={"주소규칙"} element={보여줄 컴포넌트 JSX} /> */}
                 <Route element={<Layout />}>
-                        <Route path={"/"} element={<Home />} />
+                        {/*<Route path={"/"} element={<Home />} />*/}
+                        <Route index element={<Home />} /> {/* Route컴포넌트에는 index 라는 props가 있는데, 이는 path="/"와 동일한 의미를 가진다 */}
+
+
                         {/*<Route path={"/about"} element={<About />} />*/}
                         <Route path={"/about"} element={<About2 />} />
+
                         <Route path={"/profiles/:username"} element={<Profile />} /> {/* 경로에 :을 사용해서 URL 파라미터를 설정한다 */}
                 </Route>
 
-                <Route path={"/articles"} element={<Articles />}>
+                <Route path={"/articles"} element={<Articles2 />}>
                         <Route path={":id"} element={<Article />} />
                 </Route>
                 {/*<Route path={"/articles/:id"} element={<Article />}></Route>*/}

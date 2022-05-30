@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {Component} from "react";
+import {Component, useCallback, useState} from "react";
 import Three from "./section03/Three";
 import Four from "./section04/Four";
 import Five from "./section05/Five";
@@ -22,49 +22,56 @@ import Login from "./section13/pages/Login";
 import MyPage from "./section13/pages/MyPage";
 import CallBackExample from "./section14/CallBackExample";
 import PromiseExample from "./section14/PromiseExample";
+import axios from "axios";
+import NewsList from "./section14/components/NewsList";
+import Categories from "./section14/components/Categories";
 
-class App extends Component {
-    render() {
-        return (
-            <>
-                <h2>[3장] 컴포넌트</h2>
-                <Three />
-                <br/>
 
-                <hr/>
-                <h2>[4장] 이벤트 핸들링</h2>
-                <Four />
-                <br/>
+// class App extends Component {
+//     render() {
+//         return (
+//             <>
+//                 <h2>[3장] 컴포넌트</h2>
+//                 <Three />
+//                 <br/>
+//
+//                 <hr/>
+//                 <h2>[4장] 이벤트 핸들링</h2>
+//                 <Four />
+//                 <br/>
+//
+//                 <hr/>
+//                 <h2>[5장] ref: DOM에 이름 달기</h2>
+//                 <Five />
+//                 <br/>
+//
+//                 <hr/>
+//                 <h2>[6장] 컴포넌트 반복</h2>
+//                 <Six />
+//                 <br/>
+//
+//                 {/*<hr/>*/}
+//                 {/*<h2>[7장] 컴포넌트의 라이프사이클 메서드</h2>*/}
+//                 {/*<Seven />*/}
+//                 {/*<br/>*/}
+//
+//                 <hr/>
+//                 <h2>[8장] Hooks</h2>
+//                 <Eight/>
+//
+//                 <hr/>
+//                 <h2>[12장] immer를 사용하여 더 쉽게 불변성 유지하기</h2>
+//                 <Twelve/>
+//
+//                 <PromiseExample />
+//             </>
+//         );
+//     }
+// }
 
-                <hr/>
-                <h2>[5장] ref: DOM에 이름 달기</h2>
-                <Five />
-                <br/>
-
-                <hr/>
-                <h2>[6장] 컴포넌트 반복</h2>
-                <Six />
-                <br/>
-
-                {/*<hr/>*/}
-                {/*<h2>[7장] 컴포넌트의 라이프사이클 메서드</h2>*/}
-                {/*<Seven />*/}
-                {/*<br/>*/}
-
-                <hr/>
-                <h2>[8장] Hooks</h2>
-                <Eight/>
-
-                <hr/>
-                <h2>[12장] immer를 사용하여 더 쉽게 불변성 유지하기</h2>
-                <Twelve/>
-
-                <PromiseExample />
-            </>
-        );
-    }
-}
-
+/**
+ * section 13 _ react-router
+ */
 // const App = () => {
 //         return (
 //             <Routes>
@@ -95,5 +102,34 @@ class App extends Component {
 //
 //         )
 // }
+
+/**
+ * section 14 - 외부 API를 연동하여 뉴스 뷰어 만들기
+ */
+// newsapi key : ca597ab40f9e4734a056e894d556f892
+const App = () => {
+        // const [data, setData] = useState(null);
+        // const onClick = () => {
+        //         axios.get('https://newsapi.org/v2/top-headlines?country=kr&category=entertainment&apiKey=ca597ab40f9e4734a056e894d556f892').then(response => {
+        //                 setData(response.data);
+        //         });
+        // }
+
+        const [category, setCategory] = useState('all');
+        const onSelect = useCallback(category => setCategory(category), []);
+
+        return (
+            // <div>
+            //         <div>
+            //                 <button onClick={onClick}>불러오기</button>
+            //         </div>
+            //         {data && <textarea rows={7} value={JSON.stringify(data, null, 2)} readOnly={true} /> }
+            // </div>
+            <>
+                <Categories category={category} onSelect={onSelect}/>
+                <NewsList category={category} />
+            </>
+        );
+}
 
 export default App;

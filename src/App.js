@@ -27,6 +27,7 @@ import PromiseExample from "./section14/PromiseExample";
 import NewsList from "./section14/components/NewsList";
 import Categories from "./section14/components/Categories";
 import Fifteen from "./section15/Fifteen";
+import Seventeen from "./section17/Seventeen";
 
 
 class App extends Component {
@@ -69,6 +70,11 @@ class App extends Component {
                 <br/>
                 <h2>[15장] Context API</h2>
                 <Fifteen />
+
+                <br/>
+                <hr/>
+                <h2>[17장] 리덕스를 사용하여 리액트 애플리케이션 상태 관리하기</h2>
+                <Seventeen />
             </>
         );
     }
